@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <ul class = "nav">
+      <li class="center">Poseidon</li>
+      <li class="right"><%= link_to "Home", '/home' %></li>
+      <li class="right"><%= link_to "Forecast", '/forecast' %></li>
+      <li class="right"><%= link_to "Fly Shops", '/fly' %></li>
+      <li class="right"><%= link_to 'Bait & Tackle', '/bait' %></li>
+      <li class="right"><%= link_to "Tournament Info", '/tournament' %></li>
+      <li class="right"><%= link_to "Local Fishing Tips", '/tips' %></li>
+  </ul>
+
+  <% flash.each do |name, msg| %>
+  <div class= "<%=name%>-flash">
+   <p><%= msg %></p>
+  </div>
+  <% end %>
+
     <%= yield %>
   </body>
 </html>
