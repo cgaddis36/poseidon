@@ -5,7 +5,7 @@ RSpec.describe "when I visit the welcome page" do
 
     visit '/'
 
-    within ".nav" do
+    within ".topnav" do
       expect(page).to have_link("Home")
       expect(page).to have_link("Forecast")
       expect(page).to have_link("Bait & Tackle")
@@ -13,9 +13,14 @@ RSpec.describe "when I visit the welcome page" do
       expect(page).to have_link("Tournament Info")
       expect(page).to have_link("Local Fishing Tips")
     end
-    within ".form" do
-      expect(page).to have_content("Enter zipcode:")
-      expect(page).to have_button("Submit")
+    within ".wv-heading--title" do
+      expect(page).to have_content("Enter Your Zipcode")
+    end
+    within ".wv-heading--subtitle" do
+      expect(page).to have_content("Local Tides, Wind Report, & Weather Forecast")
+    end
+    within ".myform form" do
+      expect(page).to have_button("Get Forecast")
     end
   end
 end

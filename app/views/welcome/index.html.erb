@@ -1,4 +1,26 @@
-<%= form_tag "/forecast", method: :patch, class: "form" %>
-  <%= label_tag "Enter Zipcode:" %><br/>
-  <%= text_field_tag :zipcode %><br/>
-  <%= submit_tag 'Submit' %>
+<div class="container">
+  <div class="col-md-6 mx-auto text-center">
+	 <div class="header-title">
+		<h1 class="wv-heading--title">
+      Enter Your Zipcode
+		</h1>
+		<h2 class="wv-heading--subtitle">
+      Local Tides, Wind Report, & Weather Forecast
+		</h2>
+	 </div>
+  </div>
+  <div class="row">
+	 <div class="col-md-4 mx-auto">
+		<div class="myform form ">
+		   <form action="/forecast" method="patch" name="zip">
+			  <div class="form-group">
+				 <input type="text" name="zipcode"  class="form-control my-input" id="zipcode" placeholder="Zipcode">
+			  </div>
+			  <div class="text-center ">
+				 <button type="submit" class="btn btn-block send-button tx-tfm">Get Forecast</button>
+			  </div>
+		   </form>
+		</div>
+	 </div>
+  </div>
+</div>

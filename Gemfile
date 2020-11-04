@@ -12,6 +12,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'pry'
 gem 'figaro'
+gem 'bootstrap', '~>4.0.0'
+gem 'jquery-rails'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
