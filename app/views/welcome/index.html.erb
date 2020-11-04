@@ -1,0 +1,4 @@
+<%= form_tag "/forecast", method: :patch, class: "form" %>
+  <%= label_tag "Enter Zipcode:" %><br/>
+  <%= text_field_tag :zipcode %><br/>
+  <%= submit_tag 'Submit' %>
