@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/bait', to: 'bait#index'
   get '/tournament', to: 'tournament#index'
   get '/tips', to: 'tips#index'
+  get '/maps', to: 'maps#show'
 end
