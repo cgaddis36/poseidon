@@ -26,6 +26,16 @@ class Forecast
     @wind_gusts = forecast["windGustMPH"]
     @weather = forecast["weather"]
     @visibility = forecast["visibilityMI"]
-    @icon = forecast["icon"]
+    @icon = icon_finder(forecast["weather"])
+  end
+
+  def icon_finder(weather)
+    photo = Unsplash::Photo.search(weather)
+    parsed = parse(photo)
+    parsed[0]["attributes"]["table"]["urls"]["thumb"]
+  end
+
+  def parse(photo)
+    JSON.parse(photo.to_json)
   end
 end
