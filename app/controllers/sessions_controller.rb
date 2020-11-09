@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   private
   def successful_zip(zip)
     session[:zip] = zip
-    redirect_to '/maps'
+    redirect_to '/forecast'
   end
 
   def session_error
