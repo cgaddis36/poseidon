@@ -14,10 +14,10 @@ RSpec.describe 'When I enter a correct zipcode and click the get forescast butto
 
     expect(current_path).to eq('/forecast')
 
-    expect(page).to have_css('#wind_fore', count: 200)
-    expect(page).to have_css('#weather_fore', count: 200)
-    expect(page).to have_css('#tide_hgt', count: 200)
-    expect(page).to have_css('#water_temp', count: 200)
+    expect(page).to have_css('.weather_fore', count: 376)
+    expect(page).to have_css('.wind_fore', count: 376)
+    expect(page).to have_css('.tide_hgt', count: 376)
+    expect(page).to have_css('.water_temp', count: 376)
   end
 
   it 'incorrect zipcode sad path' do
