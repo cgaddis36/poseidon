@@ -1,11 +1,15 @@
 class ForecastService
-  def get_forecast(coordinates)
-    response = conn.get('/premium/v1/marine.ashx', {key: ENV['WEATHER_API_KEY'], q: coordinates["latitude"] + ',' + coordinates["longitude"], format: 'json', tide: 'yes'})
+  def get_forecast(zip)
+    response = conn.get("/forecasts/#{zip}", {filter: '1hr', client_id: ENV["AERIS_ACCESS_ID"], client_secret: ENV["AERIS_SECRET_KEY"]})
+
     parsed = JSON.parse(response.body)
+    hourly_forecasts = parsed["response"][0]["periods"].map {|hourly| Forecast.new(hourly)}
+
+    JSON.parse(hourly_forecasts.to_json)
   end
 
   private
   def conn
-    Faraday.new(url: 'http://api.worldweatheronline.com')
+    Faraday.new(url: 'https://api.aerisapi.com')
   end
 end
