@@ -30,12 +30,14 @@ class Forecast
   end
 
   def icon_finder(weather)
-    photo = Unsplash::Photo.search(weather)
-    parsed = parse(photo)
-    parsed[0]["attributes"]["table"]["urls"]["thumb"]
-  end
 
-  def parse(photo)
-    JSON.parse(photo.to_json)
+    possible_weather = ['clear', 'raining', 'sunny', 'snowy', 'isolated showers']
+    image = []
+    possible_weather.each do |forecast|
+      if weather.downcase.include?(forecast)
+        image = forecast.gsub(' ', '_') + ".jpg"
+      end
+    end
+    image
   end
 end
