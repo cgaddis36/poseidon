@@ -12,3 +12,10 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+Unsplash.configure do |config|
+  config.application_access_key = ENV['UNSPLASH_API_KEY']
+  config.application_secret = ENV['UNSPLASH_API_SECRET']
+  config.application_redirect_uri = "http://localhost:3000/oauth/callback"
+  config.utm_source = "alices_terrific_client_app"
+
+end

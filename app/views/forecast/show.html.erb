@@ -1,19 +1,21 @@
+<h1>Hourly Predictions</h1>
 <% @forecast.each do |hourly| %>
   <div class='weather_fore'>
-    <%= hourly["date_time"] %>
-    <%= hourly["temp"] %>
-    <%= hourly["dewpoint"] %>
-    <%= hourly["humidity"] %>
-    <%= hourly["pop"] %>
-    <%= hourly["precip"] %>
-    <%= hourly["pressure"] %>
-    <%= hourly["weather"] %>
-    <%= hourly["visibility"] %>
-    <%= hourly["icon"] %>
+    <%= "Time: #{hourly["date_time"]}" %><br/>
+    <%= "Forecast: #{hourly["weather"]}" %><br/>
+    <%= "Temperature: #{hourly["temp"]} Degrees Farenheit" %><br/>
+    <%= "Dewpoint:' #{hourly["dewpoint"]} Degrees" %><br/>
+    <%= "Humidity: #{hourly["humidity"]}" %><br/>
+    <%= "Probability of Precipitation: #{hourly["pop"]} %" %><br/>
+    <%= "Precipitation: #{hourly["precip"]} In" %><br/>
+    <%= "Barometric Pressure: #{hourly["pressure"]}" %><br/>
+    <%= "Visibility: #{hourly["visibility"]} Nautical Miles" %><br/>
+    <%= image_tag hourly["icon"] %><br/>
   </div>
   <div class='wind_fore'>
-    <%= hourly["wind_direction"] %>
-    <%= hourly["wind_speed"] %>
-    <%= hourly["wind_gusts"] %>
+    <h2>Wind Predictions</h2>
+    <%= "Direction: #{hourly["wind_direction"]}" %><br/>
+    <%= "Speed: #{hourly["wind_speed"]} Knots" %><br/>
+    <%= "Gusts: #{hourly["wind_gusts"]} Knots" %><br/>
   </div>
 <% end %>

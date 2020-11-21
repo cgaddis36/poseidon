@@ -26,6 +26,18 @@ class Forecast
     @wind_gusts = forecast["windGustMPH"]
     @weather = forecast["weather"]
     @visibility = forecast["visibilityMI"]
-    @icon = forecast["icon"]
+    @icon = icon_finder(forecast["weather"])
+  end
+
+  def icon_finder(weather)
+
+    possible_weather = ['clear', 'raining', 'sunny', 'snowy', 'isolated showers']
+    image = []
+    possible_weather.each do |forecast|
+      if weather.downcase.include?(forecast)
+        image = forecast.gsub(' ', '_') + ".jpg"
+      end
+    end
+    image
   end
 end

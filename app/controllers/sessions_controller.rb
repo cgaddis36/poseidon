@@ -1,16 +1,26 @@
 class SessionsController < ApplicationController
   def update
-    if !ZipCodes.identify(params[:zipcode]).nil?
-      successful_zip(params["zipcode"])
+    if zip_exists(params[:zipcode])
+      redirect_to '/forecast'
     else
       session_error
     end
   end
 
   private
-  def successful_zip(zip)
+  def zip_exists(zip)
+    if location = ZipCodes.identify(zip)
+      zip_session(zip)
+      location_session(location)
+    end
+  end
+
+  def zip_session(zip)
     session[:zip] = zip
-    redirect_to '/forecast'
+  end
+
+  def location_session(location)
+    session[:location] = location[:city] + ',' + location[:state_code]
   end
 
   def session_error
