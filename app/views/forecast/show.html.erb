@@ -4,13 +4,15 @@
     <%= "Time: #{hourly["date_time"]}" %><br/>
     <%= "Forecast: #{hourly["weather"]}" %><br/>
     <%= "Temperature: #{hourly["temp"]} Degrees Farenheit" %><br/>
-    <%= "Dewpoint:' #{hourly["dewpoint"]} Degrees" %><br/>
+    <%= "Feels Like: #{hourly["avg_feels_like"]} Degrees Farenheit" %><br/>
+    <% if hourly["dewpoint"] %>
+      <%= "Dewpoint:' #{hourly["dewpoint"]} Degrees" %><br/>
+    <% end %>
     <%= "Humidity: #{hourly["humidity"]}" %><br/>
     <%= "Probability of Precipitation: #{hourly["pop"]} %" %><br/>
     <%= "Precipitation: #{hourly["precip"]} In" %><br/>
-    <%= "Barometric Pressure: #{hourly["pressure"]}" %><br/>
-    <%= "Visibility: #{hourly["visibility"]} Nautical Miles" %><br/>
-    <%= image_tag hourly["icon"] %><br/>
+    <%= "Barometric Pressure: #{hourly["pressure"]} Millibars" %><br/>
+    <%= "Visibility: #{hourly["visibility"]} Miles" %><br/>
   </div>
   <div class='wind_fore'>
     <h2>Wind Predictions</h2>
@@ -18,4 +20,5 @@
     <%= "Speed: #{hourly["wind_speed"]} Knots" %><br/>
     <%= "Gusts: #{hourly["wind_gusts"]} Knots" %><br/>
   </div>
+  <%= image_tag hourly["icon"] %><br/>
 <% end %>
