@@ -5,6 +5,7 @@ class Forecast
               :humidity,
               :pop,
               :precip,
+              :avg_feels_like,
               :pressure,
               :wind_direction,
               :wind_speed,
@@ -18,20 +19,20 @@ class Forecast
     @temp = forecast["tempF"]
     @dewpoint = forecast["dewPointF"]
     @humidity = forecast["humidity"]
+    @avg_feels_like = forecast["avgFeelsLikeF"]
     @pop = forecast["pop"]
     @precip = forecast["precipIN"]
-    @pressure = forecast["pressureIN"]
+    @pressure = forecast["pressureMB"]
     @wind_direction = forecast["windDir"]
-    @wind_speed = forecast["windSpeedMPH"]
-    @wind_gusts = forecast["windGustMPH"]
+    @wind_speed = forecast["windSpeedKTS"]
+    @wind_gusts = forecast["windGustKTS"]
     @weather = forecast["weather"]
     @visibility = forecast["visibilityMI"]
     @icon = icon_finder(forecast["weather"])
   end
 
   def icon_finder(weather)
-
-    possible_weather = ['clear', 'raining', 'sunny', 'snowy', 'isolated showers']
+    possible_weather = ['clear', 'raining', 'sunny', 'snowy', 'isolated showers', 'partly cloudy']
     image = []
     possible_weather.each do |forecast|
       if weather.downcase.include?(forecast)
