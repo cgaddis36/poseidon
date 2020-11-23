@@ -17,7 +17,7 @@ class Forecast
 
   def initialize(forecast)
     @date = Date.parse(forecast["dateTimeISO"])
-    @time = Time.parse(forecast["dateTimeISO"])
+    @time = Time.parse(forecast["dateTimeISO"]).strftime("%I:%M %p")
     @temp = forecast["tempF"]
     @dewpoint = forecast["dewPointF"]
     @humidity = forecast["humidity"]
