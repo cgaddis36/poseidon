@@ -32,7 +32,6 @@ class Forecast
   end
 
   def icon_finder(weather)
-
     possible_weather = ['clear', 'raining', 'sunny', 'snowy', 'isolated showers', 'partly cloudy']
     image = []
     possible_weather.each do |forecast|
