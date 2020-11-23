@@ -1,5 +1,6 @@
 class Forecast
-  attr_reader :date_time,
+  attr_reader :date,
+              :time,
               :temp,
               :dewpoint,
               :humidity,
@@ -15,11 +16,12 @@ class Forecast
               :icon
 
   def initialize(forecast)
-    @date_time = forecast["dateTimeISO"]
+    @date = Date.parse(forecast["dateTimeISO"])
+    @time = Time.parse(forecast["dateTimeISO"])
     @temp = forecast["tempF"]
     @dewpoint = forecast["dewPointF"]
     @humidity = forecast["humidity"]
-    @avg_feels_like = forecast["avgFeelsLikeF"]
+    @avg_feels_like = forecast["avgFeelslikeF"]
     @pop = forecast["pop"]
     @precip = forecast["precipIN"]
     @pressure = forecast["pressureMB"]
