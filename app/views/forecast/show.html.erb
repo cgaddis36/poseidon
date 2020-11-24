@@ -1,4 +1,7 @@
 <h1>Hourly Predictions</h1>
+<h2>
+  <%= session[:location] %>
+</h2>
 <% @forecast.each do |hourly| %>
   <div class='container'>
     <div class='weather_fore'>
