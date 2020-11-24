@@ -2,6 +2,9 @@
 
 body {
   background: url(asset_path("ocean_boat.jpg"));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 footer {
@@ -13,7 +16,6 @@ footer {
 
 .container{
   text-align: left;
-
 }
 
 a:link {

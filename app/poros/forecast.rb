@@ -34,10 +34,23 @@ class Forecast
   end
 
   def icon_finder(weather)
-    possible_weather = ['clear', 'raining', 'sunny', 'snowy', 'isolated showers', 'partly cloudy']
+    possible_weather = ['clear',
+                        'mostly clear',
+                        'raining',
+                        'mostly sunny',
+                        'snowy',
+                        'isolated showers',
+                        'partly cloudy',
+                        'partly cloudy with drizzle',
+                        'mostly cloudy with drizzle',
+                        'partly cloudy with scattered showers',
+                        'partly cloudy with isolated showers',
+                        'mostly cloudy with isolated showers',
+                        'partly cloudy with isolated storms',
+                        'mostly cloudy with scattered showers']
     image = []
     possible_weather.each do |forecast|
-      if weather.downcase.include?(forecast)
+      if weather.downcase == forecast
         image = forecast.gsub(' ', '_') + ".jpg"
       end
     end
