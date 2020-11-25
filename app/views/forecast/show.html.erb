@@ -1,5 +1,5 @@
 <div class='forecast_header1'>
-  <h1>Hourly Weather Forecast</h1>
+  <h2>Hourly Forecast</h2>
 </div>
 <div class='forecast_header2'>
   <h2>
@@ -10,9 +10,10 @@
   <% @forecast.each do |hourly| %>
     <div class='container'>
       <div class='weather_fore'>
+        <%= image_tag hourly["icon"] %>
         <%= hourly["date"] %><br/>
         <%= hourly["time"] %><br/>
-        <%= "Forecast: #{hourly["weather"]}" %><br/>
+        <%= "#{hourly["weather"]}" %><br/>
         <%= "Temperature: #{hourly["temp"]}" %>&#8457;<br/>
         <%= "Feels Like: #{hourly["avg_feels_like"]}" %>&#8457;<br/>
         <% if hourly["dewpoint"] %>
@@ -30,7 +31,6 @@
         <%= "Speed: #{hourly["wind_speed"]} KTS" %><br/>
         <%= "Gusts: #{hourly["wind_gusts"]} KTS" %><br/>
       </div>
-      <%= image_tag hourly["icon"] %><br/>
     </div>
   <% end %>
 </div>
