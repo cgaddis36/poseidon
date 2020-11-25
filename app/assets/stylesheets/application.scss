@@ -7,12 +7,22 @@ body {
   background-position: center;
 }
 
-h1 {
-  text-align: center;
+.welcome {
+  padding: 140px 
 }
 
-h2 {
+.forecast_header1 {
   text-align: center;
+  position: fixed;
+  margin-top: 60px;
+  margin-left: 70px;
+}
+
+.forecast_header2 {
+  text-align: center;
+  position: fixed;
+  margin-top: 110px;
+  margin-left: 100px;
 }
 
 footer {
@@ -24,6 +34,10 @@ footer {
 
 .container{
   text-align: left;
+}
+
+.forecast{
+  padding: 140px 450px;
 }
 
 a:link {
@@ -52,8 +66,8 @@ a:active {
 }
 
 nav {
- display: block;
- text-align: right;
+  display: block;
+  text-align: right;
 }
 
 flash {
@@ -71,6 +85,7 @@ img {
 }
 
 ul.topnav {
+  position: fixed;
   list-style-type: none;
   margin: 0;
   padding: 0;
