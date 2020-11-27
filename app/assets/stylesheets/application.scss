@@ -12,6 +12,10 @@ body {
   padding: 140px
 }
 
+.weather_fore{
+  padding-left: 250px;
+}
+
 .forecast_header1 {
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
@@ -37,6 +41,7 @@ footer {
 
 .container{
   text-align: left;
+  align: left;
 }
 
 .forecast{
@@ -80,8 +85,9 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 200px;
-  height: auto;
+  width: 220px;
+  height: 150px;
+  float: left;
 }
 
 ul.topnav {
