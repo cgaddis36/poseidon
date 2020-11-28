@@ -1,0 +1,9 @@
+<div class='tides_header'>
+  <h3>Hourly Tides Forecast</h3>
+  <%= session[:location] %>
+</div>
+<div class='container'>
+  <% @tides.each do |tide| %>
+    <%= tide.temp %>
+  <% end %>
+</div>
