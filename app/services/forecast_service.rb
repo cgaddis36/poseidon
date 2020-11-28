@@ -9,11 +9,6 @@ class ForecastService
     JSON.parse(hourly_forecasts.to_json)
   end
 
-  # def get_tides(zip)
-  #   response = conn.get("/tides/#{zip}", {client_id: ENV["AERIS_ACCESS_ID"], client_secret: ENV["AERIS_SECRET_KEY"]})
-  #   parsed = JSON.parse(response.body)
-  # end
-
   private
   def conn
     Faraday.new(url: 'https://api.aerisapi.com')
