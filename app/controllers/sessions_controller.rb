@@ -7,6 +7,14 @@ class SessionsController < ApplicationController
     end
   end
 
+  def patch
+    if zip_exists(params[:zipcode])
+      redirect_to '/tides'
+    else
+      session_error
+    end
+  end
+
   private
   def zip_exists(zip)
     if location = ZipCodes.identify(zip)
