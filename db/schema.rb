@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2020_11_28_173736) do
     t.string "lat"
     t.string "lon"
     t.string "station_id"
+    t.string "url"
+    t.string "pred_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
