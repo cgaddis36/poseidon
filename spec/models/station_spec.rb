@@ -8,5 +8,6 @@ RSpec.describe Station, type: :model do
     it { should validate_presence_of :lon }
     it { should validate_presence_of :url }
     it { should validate_presence_of :pred_type }
+    it { should validate_presence_of :state }
   end
 end

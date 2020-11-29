@@ -7,6 +7,7 @@ class CreateStations < ActiveRecord::Migration[5.2]
       t.string :station_id
       t.string :url
       t.string :pred_type
+      t.string :state
 
       t.timestamps
     end
