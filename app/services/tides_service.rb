@@ -1,5 +1,3 @@
-
-
 class TidesService
   def get_tides(zip)
 
