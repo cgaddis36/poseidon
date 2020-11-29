@@ -13,10 +13,8 @@ RSpec.describe "when I visit the welcome page" do
       expect(page).to have_link("Tournament Info")
       expect(page).to have_link("Local Fishing Tips")
     end
-    within ".wv-heading--title" do
+    within ".welcome" do
       expect(page).to have_content("Enter Your Zipcode")
-    end
-    within ".wv-heading--subtitle" do
       expect(page).to have_content("Local Tides, Wind Report, & Weather Forecast")
     end
     within ".myform form" do

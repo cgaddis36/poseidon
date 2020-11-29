@@ -1,5 +1,5 @@
 <div class='forecast_header1'>
-  <h1>Hourly Weather Forecast</h1>
+  <h2>Hourly Forecast</h2>
 </div>
 <div class='forecast_header2'>
   <h2>
@@ -9,28 +9,28 @@
 <div class='forecast'>
   <% @forecast.each do |hourly| %>
     <div class='container'>
+      <%= image_tag hourly["icon"] %>
       <div class='weather_fore'>
         <%= hourly["date"] %><br/>
         <%= hourly["time"] %><br/>
-        <%= "Forecast: #{hourly["weather"]}" %><br/>
+        <%= "#{hourly["weather"]}" %><br/>
         <%= "Temperature: #{hourly["temp"]}" %>&#8457;<br/>
         <%= "Feels Like: #{hourly["avg_feels_like"]}" %>&#8457;<br/>
         <% if hourly["dewpoint"] %>
           <%= "Dewpoint:' #{hourly["dewpoint"]}" %>&#8457;<br/>
         <% end %>
-        <%= "Humidity: #{hourly["humidity"]}" %>&#8457;<br/>
-        <%= "Probability of Precipitation: #{hourly["pop"]}%" %><br/>
-        <%= "Precipitation: #{hourly["precip"]} In" %><br/>
-        <%= "Barometric Pressure: #{hourly["pressure"]} MB" %><br/>
-        <%= "Visibility: #{hourly["visibility"]} Miles" %><br/>
+        <%= "Humidity: #{hourly["humidity"]}" %>&#8457;<br/><br/>
       </div>
       <div class='wind_fore'>
+        <%= "Probability of Precipitation: #{hourly["pop"]}%" %><br/>
+        <%= "Precipitation: #{hourly["precip"]} In" %><br/>
         <h5>Wind Predictions</h5>
+        <%= "Barometric Pressure: #{hourly["pressure"]} MB" %><br/>
+        <%= "Visibility: #{hourly["visibility"]} Miles" %><br/>
         <%= "Direction: #{hourly["wind_direction"]}" %><br/>
         <%= "Speed: #{hourly["wind_speed"]} KTS" %><br/>
-        <%= "Gusts: #{hourly["wind_gusts"]} KTS" %><br/>
+        <%= "Gusts: #{hourly["wind_gusts"]} KTS" %><br/><br/>
       </div>
-      <%= image_tag hourly["icon"] %><br/>
     </div>
   <% end %>
 </div>
