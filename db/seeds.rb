@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+file = File.open('app/assets/stations/florida.txt').each do |line|
+  if line.include?('stationid') && line.include?('latitude') &&
+    line.include?('pred_type') && line.include?('longitude')
+    station_hash = hash_config(line)
+    station = Station.create(url: station_hash[:url], station_id: station_hash[:station_id], lat: station_hash[:lat], lon: station_hash[:lon], location: station_hash[:location], pred_type: station_hash[:pred_type])
+  end
+  def hash_config(l)
+    hash = {}
+    hash[:url] = l[(l.index('a href') + 8)..(l.index('a href') + 43)]
+    hash[:station_id] = hash[:url][-7..-1]
+    hash[:lat] = l[(l.index('latitude') + 10)..(l.index('latitude') + 17)]
+    hash[:lon] = l[(l.index('longitude') + 11)..(l.index('longitude') + 18)]
+    hash[:location] = l[(l.index('a href') + 46)..(l.index('</a></td>') - 1)]
+    hash[:pred_type] = l[(l.index('pred_type') + 11)..(l.index('</td></tr>') - 1)]
+    hash
+  end
+end
