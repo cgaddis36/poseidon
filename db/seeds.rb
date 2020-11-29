@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-files = ['app/assets/stations/florida.txt']
+files = ['app/assets/stations/florida.txt', 'app/assets/stations/alabama.txt']
 
 files.each do |file|
   File.open(file).each do |line|
