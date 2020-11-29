@@ -6,5 +6,7 @@ RSpec.describe Station, type: :model do
     it { should validate_presence_of :location }
     it { should validate_presence_of :lat }
     it { should validate_presence_of :lon }
+    it { should validate_presence_of :url }
+    it { should validate_presence_of :pred_type }
   end
 end
