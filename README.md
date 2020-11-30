@@ -1,8 +1,9 @@
 # README
 
 Poseidon Fishing Tides & Forecasts
-- The One-Stop-Shop for hourly Fishing Forecasts
-- Application designed to pull the projected weather forecast, tides and currents forecast and wind forecast all in one place
+- Hourly Fishing Forecasts
+- Application designed to pull the projected weather, tides &  wind forecast all in one place
+- Webscrape NOAA Stations for real-time Tide predictions
 
 * Ruby version: 2.5.3
 
