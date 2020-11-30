@@ -11,7 +11,8 @@ files = ['app/assets/stations/florida.txt', 'app/assets/stations/alabama.txt',
           'app/assets/stations/delaware.txt', 'app/assets/stations/hawaii.txt',
           'app/assets/stations/louisiana.txt', 'app/assets/stations/maine.txt',
           'app/assets/stations/maryland.txt', 'app/assets/stations/massachusetts.txt',
-          'app/assets/stations/mississippi.txt', 'app/assets/stations/new_hampshire.txt']
+          'app/assets/stations/mississippi.txt', 'app/assets/stations/new_hampshire.txt',
+          'app/assets/stations/new_jersey.txt', 'app/assets/stations/new_york.txt']
 
 files.each do |file|
   File.open(file).each do |line|
