@@ -5,14 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-files = ['app/assets/stations/florida.txt']
+files = ['app/assets/stations/florida.txt', 'app/assets/stations/alabama.txt',
+         'app/assets/stations/georgia.txt', 'app/assets/stations/alaska.txt',
+         'app/assets/stations/california.txt', 'app/assets/stations/connecticut.txt',
+          'app/assets/stations/delaware.txt', 'app/assets/stations/hawaii.txt',
+          'app/assets/stations/louisiana.txt', 'app/assets/stations/maine.txt',
+          'app/assets/stations/maryland.txt', 'app/assets/stations/massachusetts.txt',
+          'app/assets/stations/mississippi.txt', 'app/assets/stations/new_hampshire.txt',
+          'app/assets/stations/new_jersey.txt', 'app/assets/stations/new_york.txt',
+          'app/assets/stations/north_carolina.txt', 'app/assets/stations/oregon.txt',
+          'app/assets/stations/pennsylvania.txt', 'app/assets/stations/rhode_island.txt',
+          'app/assets/stations/south_carolina.txt', 'app/assets/stations/texas.txt',
+          'app/assets/stations/virginia.txt', 'app/assets/stations/washington.txt']
+
 
 files.each do |file|
   File.open(file).each do |line|
     if line.include?('stationid') && line.include?('latitude') &&
       line.include?('pred_type') && line.include?('longitude')
       station_hash = hash_config(line)
-      station = Station.create(url: station_hash[:url], station_id: station_hash[:station_id], lat: station_hash[:lat], lon: station_hash[:lon], location: station_hash[:location], pred_type: station_hash[:pred_type], state: file[(file.index('stations/') + 9)..-5].capitalize)
+      station = Station.create(url: station_hash[:url], station_id: station_hash[:station_id], lat: station_hash[:lat], lon: station_hash[:lon], location: station_hash[:location], pred_type: station_hash[:pred_type], state: file[(file.index('stations/') + 9)..-5].gsub('_', ' ').titleize)
     end
     def hash_config(l)
       hash = {}
