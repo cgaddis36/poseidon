@@ -12,7 +12,12 @@ files = ['app/assets/stations/florida.txt', 'app/assets/stations/alabama.txt',
           'app/assets/stations/louisiana.txt', 'app/assets/stations/maine.txt',
           'app/assets/stations/maryland.txt', 'app/assets/stations/massachusetts.txt',
           'app/assets/stations/mississippi.txt', 'app/assets/stations/new_hampshire.txt',
-          'app/assets/stations/new_jersey.txt', 'app/assets/stations/new_york.txt']
+          'app/assets/stations/new_jersey.txt', 'app/assets/stations/new_york.txt',
+          'app/assets/stations/north_carolina.txt', 'app/assets/stations/oregon.txt',
+          'app/assets/stations/pennsylvania.txt', 'app/assets/stations/rhode_island.txt',
+          'app/assets/stations/south_carolina.txt', 'app/assets/stations/texas.txt',
+          'app/assets/stations/virginia.txt', 'app/assets/stations/washington.txt']
+
 
 files.each do |file|
   File.open(file).each do |line|
