@@ -11,14 +11,14 @@ files = ['app/assets/stations/florida.txt', 'app/assets/stations/alabama.txt',
           'app/assets/stations/delaware.txt', 'app/assets/stations/hawaii.txt',
           'app/assets/stations/louisiana.txt', 'app/assets/stations/maine.txt',
           'app/assets/stations/maryland.txt', 'app/assets/stations/massachusetts.txt',
-          'app/assets/stations/mississippi.txt']
+          'app/assets/stations/mississippi.txt', 'app/assets/stations/new_hampshire.txt']
 
 files.each do |file|
   File.open(file).each do |line|
     if line.include?('stationid') && line.include?('latitude') &&
       line.include?('pred_type') && line.include?('longitude')
       station_hash = hash_config(line)
-      station = Station.create(url: station_hash[:url], station_id: station_hash[:station_id], lat: station_hash[:lat], lon: station_hash[:lon], location: station_hash[:location], pred_type: station_hash[:pred_type], state: file[(file.index('stations/') + 9)..-5].capitalize)
+      station = Station.create(url: station_hash[:url], station_id: station_hash[:station_id], lat: station_hash[:lat], lon: station_hash[:lon], location: station_hash[:location], pred_type: station_hash[:pred_type], state: file[(file.index('stations/') + 9)..-5].gsub('_', ' ').titleize)
     end
     def hash_config(l)
       hash = {}
