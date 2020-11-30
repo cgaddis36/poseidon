@@ -16,9 +16,10 @@ Poseidon Fishing Tides & Forecasts
 * Configuration
   ~ AERIS API Config
     follow sign up instructions here: https://www.aerisweather.com/support/docs/api/getting-started/
-    config/application.yml file insert your aeris access id and secret key following this format:
-    AERIS_ACCESS_ID: your_key_here123
-    AERIS_SECRET_KEY: your_secret_here456
+    
+  - config/application.yml file insert your aeris access id and secret key following this format:
+    - AERIS_ACCESS_ID: your_key_here123
+    - AERIS_SECRET_KEY: your_secret_here456
 
 * PSQL database
   rails db:{create,migrate,seed}
