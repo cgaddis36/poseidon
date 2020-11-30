@@ -3,15 +3,15 @@ class SessionsController < ApplicationController
     if zip_exists(params[:zipcode])
       redirect_to '/forecast'
     else
-      session_error
+      zip_error
     end
   end
 
   def patch
-    if zip_exists(params[:zipcode])
+    if zip_exists(params[:zipcode]) && closest_station
       redirect_to '/tides'
     else
-      session_error
+      station_error
     end
   end
 
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     if location = ZipCodes.identify(zip)
       zip_session(zip)
       location_session(location)
-      coordinates_session(zip)
+      coordinates = coordinates_session(zip)
     end
   end
 
@@ -29,7 +29,8 @@ class SessionsController < ApplicationController
   end
 
   def location_session(location)
-    session[:location] = location[:city] + ',' + location[:state_code]
+    session[:state] = location[:state_name]
+    session[:city] = location[:city]
   end
 
   def coordinates_session(zip)
@@ -37,8 +38,27 @@ class SessionsController < ApplicationController
     session[:lon] = Geocoder.search(zip)[0].data["lon"][0..6]
   end
 
-  def session_error
+  def closest_station
+    stations = Station.where(state: session[:state])
+    closest = nil
+    closest_coordinates = nil
+    stations.each do |station|
+      remainder = ((station[:lat].to_f - session[:lat].to_f) + (station[:lon].to_f - session[:lon].to_f))
+      if closest_coordinates.nil? || 0 < remainder.abs && remainder.abs < closest_coordinates
+        closest = station
+        closest_coordinates = remainder.abs
+      end
+    end
+    session[:station] = closest
+  end
+
+  def zip_error
     flash[:error] = 'Zipcode does not exist, enter a correct zipcode to continue.'
+    redirect_to '/'
+  end
+
+  def station_error
+    flash[:error] = 'Zipcode is not in a state with tide prediction data from NOAA, please enter a correct zipcode to continue. Try: 32541'
     redirect_to '/'
   end
 end
