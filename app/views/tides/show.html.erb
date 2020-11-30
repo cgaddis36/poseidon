@@ -2,8 +2,12 @@
   <h3>Hourly Tides Forecast</h3>
   <%= session[:location] %>
 </div>
-<div class='container'>
-  <% @tides.each do |tide| %>
-    <%= tide.temp %>
-  <% end %>
+
+<div class='frame'>
+  <iframe src=<%="https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=#{session[:station]["station_id"]}&legacy=1"%>
+          width="1200"
+          height="600">
+  </iframe></br></br>
 </div>
+
+<h3>Data Powered by NOAA</h3>
