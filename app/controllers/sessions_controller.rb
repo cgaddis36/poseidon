@@ -41,12 +41,12 @@ class SessionsController < ApplicationController
   def closest_station
     stations = Station.where(state: session[:state])
     closest = nil
-    closest_coordinates = nil
+    closest_distance = nil
     stations.each do |station|
-      remainder = ((station[:lat].to_f - session[:lat].to_f) + (station[:lon].to_f - session[:lon].to_f))
-      if closest_coordinates.nil? || 0 < remainder.abs && remainder.abs < closest_coordinates
+      distance = Geocoder::Calculations.distance_between([station[:lat].to_f,station[:lon].to_f], [session[:lat].to_f,session[:lon].to_f])
+      if closest_distance.nil? || distance.abs < closest_distance
         closest = station
-        closest_coordinates = remainder.abs
+        closest_distance = distance.abs
       end
     end
     session[:station] = closest
