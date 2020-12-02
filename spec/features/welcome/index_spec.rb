@@ -8,10 +8,11 @@ RSpec.describe "when I visit the welcome page" do
     within ".topnav" do
       expect(page).to have_link("Home")
       expect(page).to have_link("Forecast")
-      expect(page).to have_link("Bait & Tackle")
-      expect(page).to have_link("Fly Shops")
-      expect(page).to have_link("Tournament Info")
-      expect(page).to have_link("Local Fishing Tips")
+      expect(page).to have_link("Tides")
+      # expect(page).to have_link("Bait & Tackle")
+      # expect(page).to have_link("Fly Shops")
+      # expect(page).to have_link("Tournament Info")
+      # expect(page).to have_link("Local Fishing Tips")
     end
     within ".welcome" do
       expect(page).to have_content("Enter Your Zipcode")
