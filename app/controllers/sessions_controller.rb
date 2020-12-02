@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
   def patch
     if zip_exists(params[:zipcode]) && closest_station
       redirect_to '/tides'
+    elsif zip_exists(session[:zip]) && closest_station
+      redirect_to '/tides'
     else
       station_error
     end
