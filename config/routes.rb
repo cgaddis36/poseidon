@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   get '/zip', to: 'sessions#update'
   get '/zip_tides', to: 'sessions#patch'
-  get '/forecast', to: 'forecast#show'
   get '/tides', to: 'tides#show'
+  get '/forecast', to: 'forecast#show'
   get '/fly', to: 'fly#index'
   get '/bait', to: 'bait#index'
   get '/tournament', to: 'tournament#index'

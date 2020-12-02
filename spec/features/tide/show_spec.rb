@@ -21,4 +21,24 @@ RSpec.describe 'As a visitor when I enter a correct ZipCode in and click Get Tid
 
     expect(page).to have_css('.frame', count: 1)
   end
+  it 'Routes correctly in the navbar after a zipcode has been entered and sent to the Forecast show page first' do
+    visit '/'
+
+    fill_in 'Zipcode', with: '32541'
+
+    click_button('Get Forecast')
+
+    within('.topnav') do
+      click_link('Tides')
+    end
+
+    expect(page).to have_content('Destin, Florida')
+
+    expect(page).to have_content('Hourly Tides Forecast')
+
+    expect(page).to have_content('Data Powered by NOAA')
+
+    expect(page).to have_css('.frame', count: 1)
+    expect(current_path).to eq(tides_path)
+  end
 end
