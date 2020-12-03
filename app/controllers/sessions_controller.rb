@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
   def patch
     if zip_exists(params[:zipcode]) && closest_station
+      require "pry"; binding.pry
       redirect_to '/tides'
     elsif zip_exists(session[:zip]) && closest_station
       redirect_to '/tides'
@@ -36,8 +37,8 @@ class SessionsController < ApplicationController
   end
 
   def coordinates_session(zip)
-    session[:lat] = Geocoder.search(zip)[0].data["lat"][0..6]
-    session[:lon] = Geocoder.search(zip)[0].data["lon"][0..6]
+    session[:lat] = Geocoder.search(zip, params: {countrycodes: 'us'})[0].data["lat"][0..6]
+    session[:lon] = Geocoder.search(zip, params: {countrycodes: 'us'})[0].data["lon"][0..6]
   end
 
   def closest_station
