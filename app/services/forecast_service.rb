@@ -1,20 +1,20 @@
 class ForecastService
-  def get_forecast(zip)
-    response = conn.get("/forecasts/#{zip}", {filter: '1hr', client_id: ENV["AERIS_ACCESS_ID"], client_secret: ENV["AERIS_SECRET_KEY"]})
+  def get_forecast(latitude, longitude)
+    response = conn.get("/data/2.5/onecall", {lat: latitude, lon: longitude, exclude: 'minutely', units: 'imperial', appid: ENV['OPEN_WEATHER_API_KEY']})
 
     parsed = JSON.parse(response.body)
 
-    hourly_forecasts = forecast_creation(parsed)
+    hourly_forecasts = forecast_creation(parsed["hourly"])
 
     JSON.parse(hourly_forecasts.to_json)
   end
 
   private
   def conn
-    Faraday.new(url: 'https://api.aerisapi.com')
+    Faraday.new(url: 'https://api.openweathermap.org')
   end
 
-  def forecast_creation(parsed)
-    parsed["response"][0]["periods"].map {|hourly| Forecast.new(hourly)}
+  def forecast_creation(forecast)
+    forecast.map {|hourly| Forecast.new(hourly)}
   end
 end
