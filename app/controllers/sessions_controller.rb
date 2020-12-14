@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
 
   def patch
     if zip_exists(params[:zipcode]) && closest_station
-      require "pry"; binding.pry
       redirect_to '/tides'
     elsif zip_exists(session[:zip]) && closest_station
       redirect_to '/tides'
