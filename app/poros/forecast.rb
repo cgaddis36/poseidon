@@ -20,7 +20,7 @@ class Forecast
     @dewpoint = forecast["dew_point"].to_i
     @humidity = forecast["humidity"]
     @feels_like = forecast["feels_like"].to_i
-    @pop = forecast["pop"]
+    @pop = (forecast["pop"] * 100).round(0)
     @pressure = forecast["pressure"]
     @wind_speed = (forecast["wind_speed"].to_i * 0.868976).round(1)
     @wind_deg = forecast["wind_deg"]
