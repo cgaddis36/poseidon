@@ -1,25 +1,23 @@
-class HourlyForecast
+class Forecast
   attr_reader :time,
               :temp,
               :dewpoint,
               :humidity,
-              :pop,
-              :precip,
               :feels_like,
+              :pop,
               :pressure,
-              :wind_direction,
               :wind_speed,
-              :wind_gusts,
+              :wind_deg,
               :weather,
               :visibility,
               :icon
 
   def initialize(forecast)
     @time = Time.at(forecast["dt"]).utc
-    @temp = forecast["temp"]
-    @dewpoint = forecast["dew_point"]
+    @temp = forecast["temp"].to_i
+    @dewpoint = forecast["dew_point"].to_i
     @humidity = forecast["humidity"]
-    @feels_like = forecast["feels_like"]
+    @feels_like = forecast["feels_like"].to_i
     @pop = forecast["pop"]
     @pressure = forecast["pressure"]
     @wind_speed = forecast["wind_speed"]
