@@ -12,7 +12,6 @@
       <%= image_tag hourly["icon"] %>
       <div class='weather_fore'>
         <%= hourly["time"] %><br/>
-        <%= hourly["date"] %><br/>
         <%= "#{hourly["weather"]}" %><br/>
         <%= "Temperature: #{hourly["temp"]}" %>&#8457;<br/>
         <%= "Feels Like: #{hourly["feels_like"]}" %>&#8457;<br/>
@@ -25,11 +24,10 @@
         <% if hourly["pop"] %>
           <%= "Probability of Precipitation: #{hourly["pop"]}%" %><br/>
         <% end %>
-        <h5>Wind Predictions</h5>
         <%= "Barometric Pressure: #{hourly["pressure"]} MB" %><br/>
         <%= "Visibility: #{hourly["visibility"]} Meters" %><br/>
-        <%= "Direction: #{hourly["wind_deg"]} Deg" %><br/>
-        <%= "Speed: #{hourly["wind_speed"]} KTS" %><br/>
+        <%= "Wind Speed: #{hourly["wind_speed"]} KTS" %><br/>
+        <%= "Direction: #{hourly["wind_deg"]} Deg" %><br/><br/>
       </div>
     </div>
   <% end %>
