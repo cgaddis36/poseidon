@@ -1,6 +1,6 @@
 class ForecastService
   def get_forecast(zip)
-    response = conn.get("/forecasts/#{zip}", {filter: '1hr', client_id: ENV["AERIS_ACCESS_ID"], client_secret: ENV["AERIS_SECRET_KEY"]})
+    response = conn.get("/", {})
 
     parsed = JSON.parse(response.body)
 
@@ -11,10 +11,10 @@ class ForecastService
 
   private
   def conn
-    Faraday.new(url: 'https://api.aerisapi.com')
+    Faraday.new(url: '')
   end
 
   def forecast_creation(parsed)
-    parsed["response"][0]["periods"].map {|hourly| Forecast.new(hourly)}
+    # parsed["response"][0]["periods"].map {|hourly| Forecast.new(hourly)}
   end
 end
