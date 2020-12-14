@@ -1,5 +1,5 @@
 class ForecastController < ApplicationController
   def show
-    @forecast = ForecastService.new.get_forecast(session[:zip])[0..47]
+    @forecast = ForecastService.new.get_forecast(session[:lat], session[:lon])
   end
 end
