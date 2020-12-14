@@ -14,8 +14,7 @@ class Forecast
               :date
 
   def initialize(forecast)
-    @time = Time.at(forecast["dt"]).to_s[11..19]
-    @date = Time.at(forecast["dt"]).to_s[0..10]
+    @time =  DateTime.parse(Time.at(forecast["dt"]).to_s).to_s[0..15].gsub("T", ' ')
     @temp = forecast["temp"].to_i
     @dewpoint = forecast["dew_point"].to_i
     @humidity = forecast["humidity"]
