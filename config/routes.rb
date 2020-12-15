@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/tournament', to: 'tournament#index'
   get '/tips', to: 'tips#index'
   get '/maps', to: 'maps#show'
+  get '/error', to: 'bait#error'
 end
