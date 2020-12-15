@@ -16,6 +16,6 @@ RSpec.describe 'As a visitor, when I enter in a valid zipcode, and click on the 
 
     expect(current_path).to eq(bait_path)
 
-    expect(page).to have_css('.bait_shop', count: '2')
+    expect(page).to have_css('.bait_shop', count: '1')
   end
 end
