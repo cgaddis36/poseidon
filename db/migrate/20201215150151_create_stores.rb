@@ -7,7 +7,8 @@ class CreateStores < ActiveRecord::Migration[5.2]
       t.string :state
       t.string :zip
       t.string :phone_number
-      t.text :tags, array: true, defatult: []
+      t.boolean :fly, :default => false
+      t.boolean :bait, :default => false
 
       t.timestamps
     end
