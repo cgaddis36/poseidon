@@ -34,7 +34,8 @@ ActiveRecord::Schema.define(version: 2020_12_15_155634) do
     t.string "state"
     t.string "zip"
     t.string "phone_number"
-    t.text "tags", array: true
+    t.boolean "fly", default: false
+    t.boolean "bait", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
