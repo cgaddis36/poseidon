@@ -3,11 +3,11 @@
   <%= session[:city] + ", " + session[:state] %>
 </div>
 
-<div class='bait_shop'>
-  <div class='frame'>
-    <iframe src=<%="https://www.google.com/search?igu=1&source=hp&ei=ZBTYX_viNsW0sQWM6oiIBA&q=#{session[:zip]}+bait+shops&oq=32541+bait+shops&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAEyBQghEKsCMgUIIRCSAzIFCCEQkgMyBQghEJIDMgUIIRCSAzIFCCEQkgMyBQghEJIDOggIABDqAhCPAToCCAA6BQgAELEDOgUILhCxAzoICC4QxwEQowI6CAgAELEDEIMBOggIABCxAxDJAzoFCAAQyQM6CQgAEMkDEBYQHjoGCAAQFhAeOgIIJjoHCCEQChCgAVCxL1i-SWDOSmgBcAB4AIAB0QGIAfANkgEFOC43LjGYAQCgAQGqAQdnd3Mtd2l6sAEK&sclient=psy-ab&ved=0ahUKEwj7pMLp7c7tAhVFWqwKHQw1AkEQ4dUDCAk&uact=5"%>
-            width="1200"
-            height="600">
-    </iframe></br></br>
-  </div>
+<div class='bait'>
+  <% @baits.each do |bait| %>
+    <div class='container'>
+      <%= bait.name %><br/>
+      <%= bait.description %><br/><br/>
+    </div>
+  <% end %>
 </div>
