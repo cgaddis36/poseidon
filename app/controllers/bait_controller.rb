@@ -5,10 +5,10 @@ class BaitController < ApplicationController
       flash[:error] = 'Please Enter a Correct Zipcode to continue'
       redirect_to '/'
     elsif @baits.empty?
-      redirect_to error_path
+      redirect_to bait_search_path
     end
   end
 
-  def error
+  def search
   end
 end
