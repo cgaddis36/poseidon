@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get '/tips', to: 'tips#index'
   get '/maps', to: 'maps#show'
   get '/bait_search', to: 'bait#search'
+  get '/fly_search', to: 'fly#search'
 end
