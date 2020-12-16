@@ -7,6 +7,20 @@ body {
   background-position: center;
 }
 
+.about {
+  padding-left: 305px;
+  padding-top: 40px;
+  padding-right: 305px;
+}
+
+p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: white;
+  background-color: grey;
+  border: 10px black;
+  padding: 15px;
+}
+
 .frame {
   margin-left: 120px;
 }
@@ -16,7 +30,7 @@ body {
   padding: 140px
 }
 
-.weather_fore{
+.weather_fore {
   padding-left: 250px;
 }
 
@@ -49,12 +63,6 @@ footer {
 }
 
 .forecast{
-  font-family: 'Open Sans Condensed', sans-serif;
-  padding: 140px 450px;
-  color: white
-}
-
-.fly_shop{
   font-family: 'Open Sans Condensed', sans-serif;
   padding: 140px 450px;
   color: white
