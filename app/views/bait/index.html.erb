@@ -1,13 +1,53 @@
-<div class='bait_header'>
-  <h3>Bait & Tackle Stores</h3>
-  <%= session[:city] + ", " + session[:state] %>
+<div class='header1'>
+  <h2>Bait & Tackle Stores</h2>
+</div>
+<div class='header2'>
+  <h2><%= session[:city] + ", " + session[:state] %></h2>
 </div>
 
-<div class='bait'>
+<div class='shops'>
   <% @baits.each do |bait| %>
     <div class='container'>
       <%= bait.name %><br/>
+      <%= bait.address %><br/>
+      <%= bait.city %><br/>
+      <%= bait.state %><br/>
+      <%= bait.zip %><br/>
+      <%= bait.phone_number %><br/>
       <%= bait.description %><br/><br/>
     </div>
   <% end %>
+</div>
+<div class='shop_enter'>If you do not see your favorite local shop listed above,</br>
+  enter it below and our team will review your submission!
+</div>
+<div class='shop_form'>
+  <div class="row">
+   <div class="col-md-4 mx-auto">
+    <div class="myform form ">
+       <form action="/store" method="post">
+        <div class="form-group">
+         <input type="text" name="name"  class="form-control my-input" id="bait_name" placeholder="Name">
+         <input type="text" name="address"  class="form-control my-input" id="bait_address" placeholder="Address">
+         <input type="text" name="city"  class="form-control my-input" id="bait_city" placeholder="City">
+         <input type="text" name="state"  class="form-control my-input" id="bait_state" placeholder="State">
+         <input type="text" name="zip"  class="form-control my-input" id="bait_zip" placeholder="Zip">
+         <input type="text" name="phone_number"  class="form-control my-input" id="bait_number" placeholder="Phone Number">
+         <input type="checkbox" name="fly" value="fly">Fly
+         <input type="checkbox" name="bait" value="bait">Bait & Tackle
+         <input name="authenticity_token" type="hidden" value="token_value">
+        </div>
+        <div class="text-center">
+         <button type="submit" class="btn btn-block send-button tx-tfm">Submit Bait Shop</button>
+        </div>
+       </form>
+    </div>
+   </div>
+  </div>
+</div></br>
+<div class='frame'>
+  <iframe src=<%="https://www.google.com/search?igu=1&source=hp&ei=ZBTYX_viNsW0sQWM6oiIBA&q=#{session[:zip]}+bait+shops&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAEyBQghEKsCMgUIIRCSAzIFCCEQkgMyBQghEJIDMgUIIRCSAzIFCCEQkgMyBQghEJIDOggIABDqAhCPAToCCAA6BQgAELEDOgUILhCxAzoICC4QxwEQowI6CAgAELEDEIMBOggIABCxAxDJAzoFCAAQyQM6CQgAEMkDEBYQHjoGCAAQFhAeOgIIJjoHCCEQChCgAVCxL1i-SWDOSmgBcAB4AIAB0QGIAfANkgEFOC43LjGYAQCgAQGqAQdnd3Mtd2l6sAEK&sclient=psy-ab&ved=0ahUKEwj7pMLp7c7tAhVFWqwKHQw1AkEQ4dUDCAk&uact=5"%>
+          width="1200"
+          height="600">
+  </iframe></br>
 </div>

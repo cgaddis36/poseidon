@@ -1,7 +1,35 @@
-<div class='fly_header'>
-  <h3>Fly Shops</h3>
-  <%= session[:city] + ", " + session[:state] %>
+<div class='tides_header'>
+  <h2>Fly Shops</h2>
+  <h2><%= session[:city] + ", " + session[:state] %></h2>
 </div>
+
+<div class='shop_enter'>
+  There are no shops currently in our system from this area. Please submit one below:
+</div>
+<div class='shop_form'>
+  <div class="row">
+   <div class="col-md-4 mx-auto">
+    <div class="myform form ">
+       <form action="/store" method="post">
+        <div class="form-group">
+         <input type="text" name="name"  class="form-control my-input" id="bait_name" placeholder="Name">
+         <input type="text" name="address"  class="form-control my-input" id="bait_address" placeholder="Address">
+         <input type="text" name="city"  class="form-control my-input" id="bait_city" placeholder="City">
+         <input type="text" name="state"  class="form-control my-input" id="bait_state" placeholder="State">
+         <input type="text" name="zip"  class="form-control my-input" id="bait_zip" placeholder="Zip">
+         <input type="text" name="phone_number"  class="form-control my-input" id="bait_number" placeholder="Phone Number">
+         <input type="checkbox" name="fly" value="fly">Fly
+         <input type="checkbox" name="bait" value="bait">Bait & Tackle
+         <input name="authenticity_token" type="hidden" value="token_value">
+        </div>
+        <div class="text-center">
+         <button type="submit" class="btn btn-block send-button tx-tfm">Submit Bait Shop</button>
+        </div>
+       </form>
+    </div>
+   </div>
+  </div>
+</div></br>
 
 <div class='fly_shop'>
   <div class='frame'>

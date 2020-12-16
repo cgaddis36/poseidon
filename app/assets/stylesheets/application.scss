@@ -13,12 +13,24 @@ body {
   padding-right: 305px;
 }
 
+.shop_form {
+  color: white;
+}
+
 p {
   font-family: 'Open Sans Condensed', sans-serif;
   color: white;
   background-color: grey;
   border: 10px black;
   padding: 15px;
+}
+
+.shop_enter{
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: white;
+  border: 10px black;
+  padding: 15px;
+  text-align: center;
 }
 
 .frame {
@@ -30,11 +42,11 @@ p {
   padding: 140px
 }
 
-.weather_fore {
+.weather_fore{
   padding-left: 250px;
 }
 
-.forecast_header1 {
+.header1 {
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   position: fixed;
@@ -42,13 +54,23 @@ p {
   margin-left: 305px;
 }
 
-.forecast_header2 {
+.tides_header {
+  padding-left: 20px;
+}
+
+.tides_footer {
+  padding-left: 20px;
+}
+
+.header2 {
   font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   position: fixed;
   margin-top: 110px;
   margin-left: 305px;
 }
+
+
 
 footer {
   position: bottom;
@@ -62,7 +84,18 @@ footer {
   align: left;
 }
 
+h3 {
+  color: white;
+  padding-left: 20px;
+}
+
 .forecast{
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding: 140px 450px;
+  color: white
+}
+
+.shops{
   font-family: 'Open Sans Condensed', sans-serif;
   padding: 140px 450px;
   color: white
@@ -171,12 +204,16 @@ h1{
 	font-weight: 600;
 	color:white;
 }
+
+
+
 h2{
 	color: white;
 	font-size: 21px;
 	line-height: 32px;
 	font-weight: 400;
 }
+
 @media screen and (max-width:480px){
 	h1{ font-size: 26px; }
 	h2{ font-size: 20px; }
