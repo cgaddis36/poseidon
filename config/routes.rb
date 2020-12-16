@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'welcome#index'
 
+  post '/store', to: 'store#create'
+
   get '/zip', to: 'sessions#update'
   get '/zip_tides', to: 'sessions#patch'
   get '/tides', to: 'tides#show'
