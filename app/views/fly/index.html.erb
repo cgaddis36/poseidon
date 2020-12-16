@@ -1,13 +1,25 @@
 <div class='fly_header'>
-  <h3>Fly Shops</h3>
-  <%= session[:city] + ", " + session[:state] %>
+  <h2>Fly Shops</h2>
+  <h2><%= session[:city] + ", " + session[:state] %></h2>
 </div>
 
 <div class='fly_shop'>
   <% @flys.each do |fly| %>
     <div class='container'>
       <%= fly.name %><br/>
+      <%= fly.address %><br/>
+      <%= fly.city %><br/>
+      <%= fly.state %><br/>
+      <%= fly.zip %><br/>
+      <%= fly.phone_number %><br/>
       <%= fly.description %><br/><br/>
     </div>
   <% end %>
+</div>
+</br></br>
+<div class='frame'>
+  <iframe src=<%="https://www.google.com/search?igu=1&source=hp&ei=ZBTYX_viNsW0sQWM6oiIBA&q=#{session[:zip]}+fly+shops&gs_lcp=CgZwc3ktYWIQAzIFCCEQoAEyBQghEKsCMgUIIRCSAzIFCCEQkgMyBQghEJIDMgUIIRCSAzIFCCEQkgMyBQghEJIDOggIABDqAhCPAToCCAA6BQgAELEDOgUILhCxAzoICC4QxwEQowI6CAgAELEDEIMBOggIABCxAxDJAzoFCAAQyQM6CQgAEMkDEBYQHjoGCAAQFhAeOgIIJjoHCCEQChCgAVCxL1i-SWDOSmgBcAB4AIAB0QGIAfANkgEFOC43LjGYAQCgAQGqAQdnd3Mtd2l6sAEK&sclient=psy-ab&ved=0ahUKEwj7pMLp7c7tAhVFWqwKHQw1AkEQ4dUDCAk&uact=5"%>
+          width="1200"
+          height="600">
+  </iframe></br>
 </div>
