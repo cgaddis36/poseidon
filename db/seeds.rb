@@ -48,7 +48,8 @@ Store.create(name: 'Half Hitch Bait & Tackle',
              url: 'www.halfhitch.com',
              phone_number: '(850) 837-3121',
              description: 'Locally owned and operated Saltwater Live Bait & Tackle Store. Will serve all your needs from offshore deepsea reels and live shrimp, to inshore lures and flourocarbon',
-             bait: true)
+             bait: true,
+             public: true)
 Store.create(name: 'Bass Pro Shops',
              address: '4301 Legendary Dr',
              city: 'Destin',
@@ -58,4 +59,5 @@ Store.create(name: 'Bass Pro Shops',
              phone_number: '(850) 269-6200',
              description: 'One of the largest saltwater BassProShops, worth the visit. Have everything you could need while fishing in Destin aside from Live Bait',
              bait: true,
-             fly: true)
+             fly: true,
+             public: true)
