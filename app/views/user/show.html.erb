@@ -1,0 +1,11 @@
+<div class='shops'>
+  <div class='container'>
+    <h6>Profile Info</h6>
+    <%= current_user.user_name %></br>
+    <%= current_user.first_name %>
+    <%= current_user.last_name %>
+    <%= current_user.email %></br>
+    <%= current_user.zip %></br>
+    <%= link_to 'Edit Profile', user_edit_path %>
+  </div>
+</div>
