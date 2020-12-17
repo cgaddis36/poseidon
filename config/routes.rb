@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   post '/store', to: 'store#create'
 
+  get '/register', to: 'user#new'
+  get '/login', to: 'user#login'
+  post '/user', to: 'user#create'
   get '/zip', to: 'sessions#update'
   get '/zip_tides', to: 'sessions#patch'
   get '/tides', to: 'tides#show'
