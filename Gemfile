@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'zip-codes'
 gem 'unsplash'
 gem 'geocoder'
+gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
 
   post '/store', to: 'store#create'
-
+  get '/logout', to: 'sessions#destroy'
+  get '/register', to: 'user#new'
+  get '/login', to: 'welcome#login'
+  post '/login', to: 'sessions#create'
+  post '/user', to: 'sessions#creation'
   get '/zip', to: 'sessions#update'
   get '/zip_tides', to: 'sessions#patch'
   get '/tides', to: 'tides#show'

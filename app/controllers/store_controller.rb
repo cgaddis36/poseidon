@@ -10,6 +10,9 @@ class StoreController < ApplicationController
     elsif store_params.include?('fly')
       store = Store.new(store_params)
       store.fly = true
+    elsif store_params.include?('guide')
+      store = Store.new(store_params)
+      store.guide = true
     else
       store = Store.new(store_params)
     end
@@ -24,6 +27,6 @@ class StoreController < ApplicationController
   private
 
   def store_params
-    params.permit(:name, :address, :city, :state, :zip, :phone_number, :fly, :bait)
+    params.permit(:name, :address, :city, :state, :zip, :phone_number, :fly, :bait, :guide)
   end
 end

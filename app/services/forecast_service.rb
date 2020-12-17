@@ -15,6 +15,8 @@ class ForecastService
   end
 
   def forecast_creation(forecast)
-    forecast.map {|hourly| Forecast.new(hourly)}
+    if !forecast.nil?
+      forecast.map {|hourly| Forecast.new(hourly)}
+    end 
   end
 end
