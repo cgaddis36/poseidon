@@ -13,6 +13,7 @@
     <ul class = "topnav">
       <% if !current_user.nil? %>
         <li class="right"><%= link_to "Logout", '/logout' %></li>
+        <li class="right"><%= link_to "Profile", user_path(current_user.id) %></li>
       <% else %>
         <li class="right"><%= link_to "Login", '/login' %></li>
       <% end %>

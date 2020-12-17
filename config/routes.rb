@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'welcome#index'
 
+  patch '/user', to: 'user#update'
+  get '/user/edit', to: 'user#edit'
+  get '/user', to: 'user#show'
   post '/store', to: 'store#create'
   get '/logout', to: 'sessions#destroy'
   get '/register', to: 'user#new'
