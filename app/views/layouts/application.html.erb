@@ -11,6 +11,11 @@
 
   <body>
     <ul class = "topnav">
+      <% if !current_user.nil? %>
+        <li class="right"><%= link_to "Logout", '/logout' %></li>
+      <% else %>
+        <li class="right"><%= link_to "Login", '/login' %></li>
+      <% end %>
       <li class="right"><%= link_to "About", '/about' %></li>
       <li class="right"><%= link_to "Guides", '/guide' %></li>
       <li class="right"><%= link_to "Fly Shops", '/fly' %></li>
