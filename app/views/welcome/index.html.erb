@@ -1,12 +1,12 @@
 <div class='welcome'>
   <div class="container">
     <div class="col-md-6 mx-auto text-center">
-  		<h2>
+  		<h6>
         Local Tides, Wind Report, & Weather Forecast
-  		</h2>
-  		<h2>
+  		</h6>
+  		<h6>
         Enter Your Zipcode
-  		</h2>
+  		</h6>
     </div>
     <div class="row">
   	 <div class="col-md-4 mx-auto">
@@ -19,7 +19,12 @@
   				 <button type="submit" class="btn btn-block send-button tx-tfm">Get Forecast</button>
            <button type="submit" class="btn btn-block send-button tx-tfm" formaction="/zip_tides">Get Tides</button>
   			  </div>
-  		   </form>
+  		   </form><br/><br/>
+         <div class="text-center">
+           <%= button_to "Login", '/login', class: 'btn btn-block send-button tx-tfm' %><br/>
+           <h6>Or</h6>
+           <%= button_to "Register", '/register', class: 'btn btn-block send-button tx-tfm' %>
+         </div>
   		</div>
   	 </div>
     </div>

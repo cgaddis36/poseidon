@@ -13,6 +13,11 @@ body {
   padding-right: 305px;
 }
 
+h6 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: white;
+}
+
 .shop_form {
   color: white;
 }
@@ -39,7 +44,11 @@ p {
 
 .welcome {
   font-family: 'Open Sans Condensed', sans-serif;
-  padding: 140px
+  padding: 140px;
+
+  padding-right: 260px;
+  padding-left: 260px;
+
 }
 
 .weather_fore{
