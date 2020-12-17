@@ -10,10 +10,12 @@ Rails.application.routes.draw do
   get '/forecast', to: 'forecast#show'
   get '/fly', to: 'fly#index'
   get '/bait', to: 'bait#index'
+  get '/guide', to: 'guide#index'
   get '/tournament', to: 'tournament#index'
   get '/tips', to: 'tips#index'
   get '/maps', to: 'maps#show'
   get '/bait_search', to: 'bait#search'
   get '/fly_search', to: 'fly#search'
+  get '/guide_search', to: 'guide#search'
   get '/about', to: 'about#index'
 end
