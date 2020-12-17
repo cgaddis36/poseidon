@@ -1,4 +1,18 @@
 class SessionsController < ApplicationController
+
+  def create
+    user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      zip_exists(user.zip)
+      flash[:alert] = "Hello #{user.user_name}, here is your hourly forecast for #{user.zip}"
+      redirect_to '/forecast'
+    else
+      flash[:alert] = user.errors.full_messsages.to_sentence
+      redirect_to request.referrer
+    end
+  end
+
   def update
     if zip_exists(params[:zipcode])
       redirect_to '/forecast'
@@ -17,7 +31,31 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    user = User.find_by(id: session[:user_id])
+    flash[:alert] = "#{user.user_name}Successfully logged out."
+    session.clear
+    redirect_to '/'
+  end
+
+  def creation
+    user = User.create(user_params)
+    if user.save
+      session[:user_id] = user.id
+      zip_exists(user.zip)
+      flash[:success] = "Welcome #{user.user_name} here is your forecast for #{user.zip}!"
+      redirect_to '/forecast'
+    else
+      flash[:notice] = user.errors.full_messages.to_sentence
+      redirect_to '/register'
+    end
+  end
+
   private
+  def user_params
+    params.permit(:first_name, :email, :zip, :last_name, :user_name, :password, :password_confirmation)
+  end
+
   def zip_exists(zip)
     if location = ZipCodes.identify(zip)
       zip_session(zip)
