@@ -24,6 +24,10 @@ class StoreController < ApplicationController
     redirect_to request.referrer
   end
 
+  def show
+    @store = Store.find(params[:store_id])
+  end
+
   private
 
   def store_params

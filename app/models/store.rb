@@ -1,6 +1,8 @@
 class Store < ApplicationRecord
   validates :name, :state, :city, :zip, :address, :phone_number, presence: true
 
+  has_many :reviews, dependent: :destroy
+
   def self.nearby_bait(zip)
     where(zip: zip).where(bait: true).where(public: true)
   end

@@ -20,13 +20,7 @@
            <button type="submit" class="btn btn-block send-button tx-tfm" formaction="/zip_tides">Get Tides</button>
   			  </div>
   		   </form><br/><br/>
-         <% if current_user.nil? %>
-           <div class="text-center">
-             <%= link_to "Login", '/login', class: 'btn btn-block send-button tx-tfm' %><br/>
-             <h6>Or</h6>
-             <%= link_to "Register", '/register', class: 'btn btn-block send-button tx-tfm' %>
-           </div>
-          <% end %>
+
   		</div>
   	 </div>
     </div>

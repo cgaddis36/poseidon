@@ -8,13 +8,16 @@
 <div class='shops'>
   <% @baits.each do |bait| %>
     <div class='container'>
-      <%= bait.name %><br/>
+      <%= link_to bait.name, "/store/#{bait.id}" %><br/>
       <%= bait.address %><br/>
       <%= bait.city %><br/>
       <%= bait.state %><br/>
       <%= bait.zip %><br/>
       <%= bait.phone_number %><br/>
       <%= bait.description %><br/><br/>
+      <% if bait.reviews %>
+        <%= link_to 'Reviews', "/store/#{bait.id}" %>
+      <% end %>
     </div>
   <% end %>
 </div>
