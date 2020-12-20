@@ -1,0 +1,18 @@
+<div class='shops'>
+  <div class='container'>
+    <%= @store.name %><br/>
+    <%= @store.address %><br/>
+    <%= @store.city %><br/>
+    <%= @store.state %><br/>
+    <%= @store.zip %><br/>
+    <%= @store.phone_number %><br/>
+    <%= @store.description %><br/>
+    <%= link_to "Leave a Review", "/store/#{@store.id}/review/new" %></br>
+    <% if @store.reviews %>
+      <% @store.reviews.each do |review| %>
+        <%= review.comment %></br>
+        <%= review.created_at %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
