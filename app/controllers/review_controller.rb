@@ -1,6 +1,11 @@
 class ReviewController < ApplicationController
   def new
-    @store = Store.find(params[:store_id])
+    if current_user
+      @store = Store.find(params[:store_id])
+    else 
+      flash[:notice] = "Must be logged in to leave a review. Please register or login to leave a review."
+      redirect_to request.referrer
+    end
   end
 
   def create
