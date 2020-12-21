@@ -2,8 +2,7 @@
   <div class='container'>
     <%= @store.name %><br/>
     <%= @store.address %><br/>
-    <%= @store.city %><br/>
-    <%= @store.state %><br/>
+    <%= "#{@store.city}, #{@store.state}" %><br/>
     <%= @store.zip %><br/>
     <%= @store.phone_number %><br/>
     <%= @store.description %><br/>
@@ -12,7 +11,7 @@
       <% @store.reviews.each do |review| %>
         <%= review.comment %></br>
         Rating: <%= review.rating %></br>
-        <%= review.created_at %>
+        <%= review.created_at %></br></br>
       <% end %>
     <% end %>
   </div>
