@@ -6,6 +6,14 @@
     <%= current_user.last_name %>
     <%= current_user.email %></br>
     <%= current_user.zip %></br>
-    <%= link_to 'Edit Profile', user_edit_path %>
+    <%= link_to 'Edit Profile', user_edit_path %></br>
+    <% if current_user.reviews %>
+      <% current_user.reviews.each do |review| %>
+        <%= review.store.name %></br> 
+        <%= review.comment %></br>
+        Rating: <%= review.rating %></br>
+        <%= review.created_at %>
+      <% end %>
+    <% end %>
   </div>
 </div>
