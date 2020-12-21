@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/store/:store_id', to: 'store#show'
   get '/store/:store_id/review/new', to: 'review#new'
   post 'store/:store_id/review', to: 'review#create'
+  delete '/store/:store_id/review/:review_id', to: 'review#destroy'
 
   get '/user', to: 'user#show'
   patch '/user', to: 'user#update'
