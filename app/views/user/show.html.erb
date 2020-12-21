@@ -9,10 +9,11 @@
     <%= link_to 'Edit Profile', user_edit_path %></br>
     <% if current_user.reviews %>
       <% current_user.reviews.each do |review| %>
-        <%= review.store.name %></br> 
+        <%= review.store.name %></br>
         <%= review.comment %></br>
         Rating: <%= review.rating %></br>
         <%= review.created_at %>
+        <%= link_to "Delete Review", "/store/#{review.store.id}/review/#{review.id}", method: 'delete' %>
       <% end %>
     <% end %>
   </div>
