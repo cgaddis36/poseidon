@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       flash[:alert] = "Hello #{user.user_name}, here is your hourly forecast for #{user.zip}"
       redirect_to '/forecast'
     else
-      flash[:alert] = user.errors.full_messsages.to_sentence
+      flash[:alert] = "Email or password entered incorrectly, please try again."
       redirect_to request.referrer
     end
   end
@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
 
   def destroy
     user = User.find_by(id: session[:user_id])
-    flash[:alert] = "#{user.user_name}Successfully logged out."
+    flash[:alert] = "Successfully logged out."
     session.clear
     redirect_to '/'
   end

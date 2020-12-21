@@ -8,13 +8,16 @@
 <div class='shops'>
   <% @guides.each do |guide| %>
     <div class='container'>
-      <%= guide.name %><br/>
+      <%= link_to guide.name, "/store/#{guide.id}" %><br/>
       <%= guide.address %><br/>
       <%= guide.city %><br/>
       <%= guide.state %><br/>
       <%= guide.zip %><br/>
       <%= guide.phone_number %><br/>
       <%= guide.description %><br/><br/>
+      <% if guide.reviews %>
+        <%= link_to 'Reviews', "/store/#{guide.id}" %>
+      <% end %>
     </div>
   <% end %>
 </div>
