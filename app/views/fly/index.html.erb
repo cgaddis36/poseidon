@@ -8,13 +8,16 @@
 <div class='shops'>
   <% @flys.each do |fly| %>
     <div class='container'>
-      <%= fly.name %><br/>
+      <%= link_to fly.name, "/store/#{fly.id}" %><br/>
       <%= fly.address %><br/>
       <%= fly.city %><br/>
       <%= fly.state %><br/>
       <%= fly.zip %><br/>
       <%= fly.phone_number %><br/>
       <%= fly.description %><br/><br/>
+      <% if fly.reviews %>
+        <%= link_to 'Reviews', "/store/#{fly.id}" %>
+      <% end %>
     </div>
   <% end %>
 </div>
