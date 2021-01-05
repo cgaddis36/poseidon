@@ -7,6 +7,7 @@ module Types
     field :last_name, String, null: true
     field :user_name, String, null: true
     field :zip, String, null: true
+    field :reviews, [Types::ReviewType], null: false
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
   end
