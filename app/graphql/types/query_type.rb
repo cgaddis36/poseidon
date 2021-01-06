@@ -1,9 +1,7 @@
 module Types
   class QueryType < Types::BaseObject
-    field :all_stations, [Types::StationType], null: false
+    field :all_stations, resolver: Queries::AllStations
 
-    def all_stations
-      Station.all
-    end 
+
   end
 end
