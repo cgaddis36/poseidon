@@ -14,16 +14,19 @@ module Queries
       end
 
       stations = Station.where(state: state)
-      closest = nil
-      closest_distance = nil
-      stations.each do |station|
-        distance = Geocoder::Calculations.distance_between([station[:lat].to_f,station[:lon].to_f], [lat.to_f,lon.to_f])
-        if closest_distance.nil? || distance.abs < closest_distance
-          closest = station
-          closest_distance = distance.abs
+      if !stations.empty?
+        closest = nil
+        closest_distance = nil
+        stations.each do |station|
+          distance = Geocoder::Calculations.distance_between([station[:lat].to_f,station[:lon].to_f], [lat.to_f,lon.to_f])
+          if closest_distance.nil? || distance.abs < closest_distance
+            closest = station
+            closest_distance = distance.abs
+          end
         end
+        closest
+      else raise GraphQL::ExecutionError, "Zipcode is not in a state with tide prediction data from NOAA, please enter a correct zipcode to continue. Try: 32541"
       end
-      closest
     end
   end
 end
