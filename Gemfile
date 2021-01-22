@@ -21,6 +21,8 @@ gem 'geocoder'
 gem 'bcrypt', '~> 3.1.7'
 gem 'graphql'
 gem "webpacker", "~> 5"
+gem "react_on_rails", "11.0.0"
+gem 'mini_racer', platforms: :ruby
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
