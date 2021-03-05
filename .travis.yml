@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+- 2.5.3
+addons:
+  postgresql: 9.6
+  chrome: stable
+dist: xenial
+before_install:
+- gem install bundler
+script:
+- yarn
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: vpX+PhBKUTK9ZvciqxfWdsK0UXS//IoPaET4GqhGoT38bdXnfQ3ihTVYH2h3+jzjDQoJ+jof+QRSQqEUWHwqy2ZnxyYzKiecRdIxZT/Mn8kLLmnp+VWYYOzzZ6kiEeH7wYkGSWjROqSt2Uin9gMVSV1KE4gwkcJhk8zV9Pq2aPk8+WxWkGeB86vPWejAEb7jz25VfGk8s82Xo8qYfuHsOGz8U15Yrm7UF1fBofJjbZp7B/k1vQuKtTOPJhHrE6T52/cjKpQxpzQGSjFVG/CSzCGgVtPP6wFDGvsa4Kw/j4uNug4eXIcrTbfr3kEfOhsE50Hrb4mnkQRapGmxL4v+dIdBIKneVxy8ZSEg1VmfbJYyn+MUUCwr4DA0u3IhxVE0w+Z5WTCTpDfnNIfzDe5GZ24PBUllP6lw9F55bAh+83xTg36hF2qCQYl9hVqNIDRqbvFHNkEtJSvPLnQqPcxOxIZ0D/rz3xa/1foUaMPD1cPUrdeE7h4Z0ElqlqkV743ADKFvuLmXMDtJrLfdS2HuBbmmkIDnV7ONaHrVZN57Lr3FhodhiRBBLTbBWnJs4Cf2SVIBb68PeReGYc8Nmh/710fZJDIgv4J2gGt3drWyV5XF/z8+8g9nqSuRZoxuU3v3uV0mDokLZsEYeTpfBfUwB5Jo6qBEBf9h9BlibS37dOY=
+  app: poseidon-forecasts
+  run: rails db:migrate
