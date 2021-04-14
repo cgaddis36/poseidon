@@ -23,7 +23,8 @@ files.each do |file|
                                lon: station_hash[:lon],
                                location: station_hash[:location],
                                pred_type: station_hash[:pred_type],
-                               state: file[(file.index('stations/') + 9)..-5].gsub('_', ' ').titleize
+                               state: file[(file.index('stations/') + 9)..-5].gsub('_', ' ').titleize,
+                               zipcodes: [Geocoder.search([station_hash[:lat], station_hash[:lon]])[0].data["address"]["postcode"]]
                              )
     end
 
