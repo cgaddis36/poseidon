@@ -30,5 +30,12 @@ module Poseidon
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.assets.initialize_on_precompile = false
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*', 'http://localhost:3000'
+        resource '*', headers: :any, methods: [:get, :post]
+      end
+    end
   end
 end
