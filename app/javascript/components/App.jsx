@@ -6,9 +6,7 @@ import Tides from './Tides/Tides'
 
 const App = () => {
   return<Switch>
-    <Route exact path="/" component={Welcome}/>
-    <Route exact path="/forecast/:zipcode" component={Forecast}/>
-    <Route exact path="/tides/:zipcode" component={Tides}/>
+
 
   </Switch>
 }
