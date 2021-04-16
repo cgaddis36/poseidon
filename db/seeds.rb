@@ -23,8 +23,7 @@ files.each do |file|
                                lon: station_hash[:lon],
                                location: station_hash[:location],
                                pred_type: station_hash[:pred_type],
-                               state: file[(file.index('stations/') + 9)..-5].gsub('_', ' ').titleize,
-                               zipcodes: [Geocoder.search([station_hash[:lat], station_hash[:lon]])[0].data["address"]["postcode"]]
+                               state: file[(file.index('stations/') + 9)..-5].gsub('_', ' ').titleize
                              )
     end
 
@@ -62,3 +61,23 @@ Store.create(name: 'Bass Pro Shops',
              bait: true,
              fly: true,
              public: true)
+
+ def zipcode_lookup(lat, lon)
+   zipcode_array = []
+   if (json_data = Geocoder.search([lat, lon])) && (address_hash = json_data[0].data["address"]) && (zipcode = address_hash["postcode"])
+     zipcode_array << zipcode
+   end
+   zipcode_array
+ end
+
+ Station.all[0..1500].each do |station|
+   station.update!(zipcodes: zipcode_lookup(station[:lat], station[:lon]))
+ end
+
+ Station.all[1501..2000].each do |station|
+   station.update!(zipcodes: zipcode_lookup(station[:lat], station[:lon]))
+ end
+
+ Station.all[2001..-1].each do |station|
+   station.update!(zipcodes: zipcode_lookup(station[:lat], station[:lon]))
+ end
