@@ -17,9 +17,12 @@ gem 'bootstrap', '~>4.0.0'
 gem 'jquery-rails'
 gem 'zip-codes'
 gem 'unsplash'
+gem 'rack-cors'
 gem 'geocoder'
 gem 'bcrypt', '~> 3.1.7'
 gem 'graphql'
+gem "webpacker", "~> 5"
+gem 'mini_racer', platforms: :ruby
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
