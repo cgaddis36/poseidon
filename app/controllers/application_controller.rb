@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user
+  skip_before_action :verify_authenticity_token
   protect_from_forgery with: :null_session
+  helper_method :current_user
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
