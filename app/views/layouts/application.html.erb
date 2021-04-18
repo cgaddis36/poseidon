@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Poseidon</title>
+    <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -28,9 +29,9 @@
     </ul>
 
   <% flash.each do |name, msg| %>
-    <div class= "<%=name%>-flash">
-     <p><%= msg %></p>
-    </div>
+  <div class= "<%=name%>-flash">
+   <p><%= msg %></p>
+  </div>
   <% end %>
 
     <%= yield %>
