@@ -27,12 +27,10 @@ ActiveRecord::Schema.define(version: 2021_04_12_004352) do
   end
 
   create_table "stations", force: :cascade do |t|
-    t.string "location"
+    t.string "name"
     t.string "lat"
     t.string "lon"
     t.string "station_id"
-    t.string "url"
-    t.string "pred_type"
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
