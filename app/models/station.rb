@@ -1,3 +1,3 @@
 class Station < ApplicationRecord
-  validates :url, :state, :station_id, :lat, :lon, :location, :pred_type, presence: true
+  validates :state, :station_id, :lat, :lon, :name, presence: true
 end
