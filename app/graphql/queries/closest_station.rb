@@ -4,15 +4,74 @@ module Queries
     argument :zip, String, required: true
 
     def resolve(zip:)
+      state_hash = {
+        'AL' => 'Alabama',
+        'AK' => 'Alaska',
+        'AS' => 'America Samoa',
+        'AZ' => 'Arizona',
+        'AR' => 'Arkansas',
+        'CA' => 'California',
+        'CO' => 'Colorado',
+        'CT' => 'Connecticut',
+        'DE' => 'Delaware',
+        'DC' => 'District of Columbia',
+        'FM' => 'Federated States Of Micronesia',
+        'FL' => 'Florida',
+        'GA' => 'Georgia',
+        'GU' => 'Guam',
+        'HI' => 'Hawaii',
+        'ID' => 'Idaho',
+        'IL' => 'Illinois',
+        'IN' => 'Indiana',
+        'IA' => 'Iowa',
+        'KS' => 'Kansas',
+        'KY' => 'Kentucky',
+        'LA' => 'Louisiana',
+        'ME' => 'Maine',
+        'MH' => 'Marshall Islands',
+        'MD' => 'Maryland',
+        'MA' => 'Massachusetts',
+        'MI' => 'Michigan',
+        'MN' => 'Minnesota',
+        'MS' => 'Mississippi',
+        'MO' => 'Missouri',
+        'MT' => 'Montana',
+        'NE' => 'Nebraska',
+        'NV' => 'Nevada',
+        'NH' => 'New Hampshire',
+        'NJ' => 'New Jersey',
+        'NM' => 'New Mexico',
+        'NY' => 'New York',
+        'NC' => 'North Carolina',
+        'ND' => 'North Dakota',
+        'OH' => 'Ohio',
+        'OK' => 'Oklahoma',
+        'OR' => 'Oregon',
+        'PW' => 'Palau',
+        'PA' => 'Pennsylvania',
+        'PR' => 'Puerto Rico',
+        'RI' => 'Rhode Island',
+        'SC' => 'South Carolina',
+        'SD' => 'South Dakota',
+        'TN' => 'Tennessee',
+        'TX' => 'Texas',
+        'UT' => 'Utah',
+        'VT' => 'Vermont',
+        'VI' => 'Virgin Island',
+        'VA' => 'Virginia',
+        'WA' => 'Washington',
+        'WV' => 'West Virginia',
+        'WI' => 'Wisconsin',
+        'WY' => 'Wyoming'
+      }
       data = Geocoder.search(zip, params: {countrycodes: 'us'})
       if !data.empty?
         data = data[0].data
         lat = data["lat"][0..6]
         lon = data["lon"][0..6]
-        state = data["address"]["state"]
+        state = state_hash.key(data["address"]["state"])
       else raise GraphQL::ExecutionError, "Zipcode does not exist, try another US Zipcode"
       end
-
       stations = Station.where(state: state)
       if !stations.empty?
         closest = nil
