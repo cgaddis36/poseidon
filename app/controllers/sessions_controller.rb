@@ -69,7 +69,7 @@ class SessionsController < ApplicationController
   end
 
   def location_session(location)
-    session[:state] = location[:state_name]
+    session[:state] = state_converter.key(location[:state_name])
     session[:city] = location[:city]
   end
 
