@@ -3,9 +3,9 @@ module Mutations
     class CreateUser < ::Mutations::BaseMutation
       argument :email, String, required: true
       argument :password, String, required: true
-      argument :first_name, String, required: true
-      argument :last_name, String, required: true
-      argument :user_name, String, required: true
+      argument :first_name, String, required: false
+      argument :last_name, String, required: false
+      argument :user_name, String, required: false
       argument :zip, String, required: false
 
       field :user, Types::UserType, null: false
