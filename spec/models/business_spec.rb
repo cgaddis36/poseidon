@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Store, type: :model do
+RSpec.describe Business, type: :model do
   describe 'validations' do
     it { should validate_presence_of :name }
     it { should validate_presence_of :address }
@@ -9,6 +9,7 @@ RSpec.describe Store, type: :model do
     it { should validate_presence_of :zip }
     it { should validate_presence_of :phone_number }
 
-    it { should have_many :reviews }
+    it { should have_many :business_services }
+    it { should have_many(:services).through(:business_services) }
   end
 end
