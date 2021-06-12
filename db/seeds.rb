@@ -1,6 +1,6 @@
 stations = StationsFacade.new.build_stations
 
-Store.create(name: 'Half Hitch Bait & Tackle',
+Business.create(name: 'Half Hitch Bait & Tackle',
              address: '621 Harbor Blvd',
              city: 'Destin',
              state: 'FL',
@@ -8,9 +8,8 @@ Store.create(name: 'Half Hitch Bait & Tackle',
              url: 'www.halfhitch.com',
              phone_number: '(850) 837-3121',
              description: 'Locally owned and operated Saltwater Live Bait & Tackle Store. Will serve all your needs from offshore deepsea reels and live shrimp, to inshore lures and flourocarbon',
-             bait: true,
              public: true)
-Store.create(name: 'Bass Pro Shops',
+Business.create(name: 'Bass Pro Shops',
              address: '4301 Legendary Dr',
              city: 'Destin',
              state: 'FL',
@@ -18,8 +17,6 @@ Store.create(name: 'Bass Pro Shops',
              url: 'www.basspro.com',
              phone_number: '(850) 269-6200',
              description: 'Your typical saltwater Bass Pro Shops. Have everything you could need while fishing in Destin. Conventional Rods & Reels & Tackle, Basic Fly Gear',
-             bait: true,
-             fly: true,
              public: true)
 
  def zipcode_lookup(lat, lon)
