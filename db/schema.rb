@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_170411) do
     t.string "address"
     t.string "city"
     t.string "state"
+    t.string "hours"
     t.string "url"
     t.string "zip"
     t.string "description"
