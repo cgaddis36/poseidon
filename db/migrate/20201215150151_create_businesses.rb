@@ -5,6 +5,7 @@ class CreateBusinesses < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :city
       t.string :state
+      t.string :hours
       t.string :url
       t.string :zip
       t.string :description
