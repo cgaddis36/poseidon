@@ -1,6 +1,7 @@
 class GuideController < ApplicationController
   def index
-    @guides = Store.nearby_guide(session[:zip])
+    @guides = Business.where(zip: session[:zip]).joins(:services).where("services.name = ?", "Fishing Guide")
+
     if session[:zip].nil?
       flash[:error] = 'Please Enter a Correct Zipcode to continue'
       redirect_to '/'
