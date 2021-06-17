@@ -6,6 +6,13 @@ fishing_guide = Service.create(name: "Fishing Guide")
 hunting_guide = Service.create(name: "Hunting Guide")
 adventure_guide = Service.create(name: "Adventure Guide")
 
+user = User.create(email: "billdance@example.com",
+  password: "bass1234",
+  first_name: "Bill",
+  last_name: "Dance",
+  user_name: "bassmaster32",
+  zip: "32541")
+
 #Florida Panhandle
         fl_business1 = Business.create(name: 'Half Hitch Bait & Tackle',
                      address: '621 Harbor Blvd',
@@ -104,11 +111,14 @@ co_business1 = Business.create(name: 'Trouts Fly Fishing',
              description: 'Fly fishing store with all of your essential river basics and more. From the newest Ross and Abel reels, to offering beginners fly-fishing classes on the Platte, this store has most anything you could be looking for.',
              public: true)
 
-BusinessService.create(business_id: co_business1.id,
+bs1 = BusinessService.create(business_id: co_business1.id,
                        service_id: fly_shop.id)
-BusinessService.create(business_id: co_business1.id,
+bs2 = BusinessService.create(business_id: co_business1.id,
                       service_id: fishing_guide.id)
-
+bs2.reviews.create(user_id: user.id,
+                    title: "Fantastic Front Range guided trip to Deckers",
+                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
+                    rating: 5)
 
 #End Front Range Colorado
 
