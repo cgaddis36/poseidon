@@ -10,6 +10,7 @@ module Types
     field :zip, String, null: true
     field :description, String, null: true
     field :phone_number, String, null: true
+    field :reviews, [Types::ReviewType], null: true
     field :public, Boolean, null: true
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
