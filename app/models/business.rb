@@ -3,6 +3,7 @@ class Business < ApplicationRecord
 
   has_many :business_services, dependent: :destroy
   has_many :services, :through => :business_services
+  has_many :reviews, :through => :business_services
 
   def self.nearby_bait(zip)
     where(zip: zip).where(bait: true).where(public: true)
