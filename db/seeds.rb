@@ -119,14 +119,41 @@ bs2.reviews.create(user_id: user.id,
                     title: "Fantastic Front Range guided trip to Deckers",
                     comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
                     rating: 5)
+bs2.reviews.create(user_id: user.id,
+                    title: "Fantastic Front Range guided trip to ",
+                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
+                    rating: 5)
+bs2.reviews.create(user_id: user.id,
+                    title: "Fantastic Front Range guided trip to Deckers",
+                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
+                    rating: 5)
+bs2.reviews.create(user_id: user.id,
+                    title: "Fantastic Front Range guided trip to Deckers",
+                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
+                    rating: 5)
+bs2.reviews.create(user_id: user.id,
+                    title: "Fantastic Front Range guided trip to Deckers",
+                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
+                    rating: 5)
+bs2.reviews.create(user_id: user.id,
+                    title: "Fantastic Front Range guided trip to Deckers",
+                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
+                    rating: 5)
+bs2.reviews.create(user_id: user.id,
+                    title: "Fantastic Front Range guided trip to Deckers",
+                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
+                    rating: 5)
+bs2.reviews.create(user_id: user.id,
+                    title: "Fantastic Front Range guided trip to Deckers",
+                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
+                    rating: 5)
+bs2.reviews.create(user_id: user.id,
+                    title: "Fantastic Front Range guided trip to Deckers",
+                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
+                    rating: 5)
+bs2.reviews.create(user_id: user.id,
+                    title: "Fantastic Front Range guided trip to Deckers",
+                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
+                    rating: 5)
 
 #End Front Range Colorado
-
-
- def zipcode_lookup(lat, lon)
-   zipcode_array = []
-   if (json_data = Geocoder.search([lat, lon])) && (address_hash = json_data[0].data["address"]) && (zipcode = address_hash["postcode"])
-     zipcode_array << zipcode
-   end
-   zipcode_array
- end
