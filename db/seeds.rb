@@ -115,45 +115,10 @@ bs1 = BusinessService.create(business_id: co_business1.id,
                        service_id: fly_shop.id)
 bs2 = BusinessService.create(business_id: co_business1.id,
                       service_id: fishing_guide.id)
-bs2.reviews.create(user_id: user.id,
-                    title: "Fantastic Front Range guided trip to Deckers",
-                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
+bs1.reviews.create(user_id: user.id,
+                    title: "Favorite Fly shop in Denver",
+                    comment: "Well known fly shop located right on the South Platte river in the heart of Downtown Denver. Stocked with all of your river essentials, helped me get started flyfishing when I first came to the area.",
                     rating: 5)
-bs2.reviews.create(user_id: user.id,
-                    title: "Fantastic Front Range guided trip to ",
-                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
-                    rating: 5)
-bs2.reviews.create(user_id: user.id,
-                    title: "Fantastic Front Range guided trip to Deckers",
-                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
-                    rating: 5)
-bs2.reviews.create(user_id: user.id,
-                    title: "Fantastic Front Range guided trip to Deckers",
-                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
-                    rating: 5)
-bs2.reviews.create(user_id: user.id,
-                    title: "Fantastic Front Range guided trip to Deckers",
-                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
-                    rating: 5)
-bs2.reviews.create(user_id: user.id,
-                    title: "Fantastic Front Range guided trip to Deckers",
-                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
-                    rating: 5)
-bs2.reviews.create(user_id: user.id,
-                    title: "Fantastic Front Range guided trip to Deckers",
-                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
-                    rating: 5)
-bs2.reviews.create(user_id: user.id,
-                    title: "Fantastic Front Range guided trip to Deckers",
-                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
-                    rating: 5)
-bs2.reviews.create(user_id: user.id,
-                    title: "Fantastic Front Range guided trip to Deckers",
-                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
-                    rating: 5)
-bs2.reviews.create(user_id: user.id,
-                    title: "Fantastic Front Range guided trip to Deckers",
-                    comment: "Booked a guided wade trip to Deckers for my first time fly fishing and had an absolute blast. Caught 2 Rainbow trout and a small brown! Truly a great first time experience at Trouts.",
-                    rating: 5)
+
 
 #End Front Range Colorado
