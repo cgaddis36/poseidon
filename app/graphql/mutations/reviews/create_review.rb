@@ -33,6 +33,7 @@ module Mutations
         end
         average = (sum/length)
         business.update!(average_rating: average)
+        business.save
         if review.save
           {
             review: review,
