@@ -108,6 +108,7 @@ co_business1 = Business.create(name: 'Trouts Fly Fishing',
              zip: '80204',
              url: 'www.troutsflyfishing.com',
              phone_number: '(303) 733-1434',
+             average_rating: 5,
              description: 'Fly fishing store with all of your essential river basics and more. From the newest Ross and Abel reels, to offering beginners fly-fishing classes on the Platte, this store has most anything you could be looking for.',
              public: true)
 
