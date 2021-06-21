@@ -12,6 +12,7 @@ module Types
     field :phone_number, String, null: true
     field :reviews, [Types::ReviewType], null: true
     field :business_services, [Types::BusinessServiceType], null: true
+    field :services, [Types::ServiceType], null: true
     field :public, Boolean, null: true
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
