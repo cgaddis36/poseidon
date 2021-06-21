@@ -17,6 +17,22 @@ module Mutations
                         user_id: user_id.to_i,
                         business_service_id: business_service_id.to_i
                         )
+        sum = 0
+        length = 0
+        business = Business.find(BusinessService.find(business_service_id).business_id)
+        business.business_services.each do |business_service|
+          if !business_service.reviews.empty?
+            business_service.reviews.each do |business_review|
+              sum += business_review.rating
+              length += 1
+            end
+          elsif business_service.reviews.empty? && (business_service.id == business_service_id.to_i)
+            sum = review.rating
+            length += 1
+          end
+        end
+        average = (sum/length)
+        business.update!(average_rating: average)
         if review.save
           {
             review: review,
