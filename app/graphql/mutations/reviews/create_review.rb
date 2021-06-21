@@ -27,7 +27,7 @@ module Mutations
               length += 1
             end
           elsif business_service.reviews.empty? && (business_service.id == business_service_id.to_i)
-            sum = review.rating
+            sum += review.rating
             length += 1
           end
         end
