@@ -10,6 +10,7 @@ module Types
     field :zip, String, null: true
     field :description, String, null: true
     field :phone_number, String, null: true
+    field :average_rating, String, null: true
     field :reviews, [Types::ReviewType], null: true
     field :business_services, [Types::BusinessServiceType], null: true
     field :services, [Types::ServiceType], null: true
