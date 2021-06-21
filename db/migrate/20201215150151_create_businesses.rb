@@ -10,6 +10,7 @@ class CreateBusinesses < ActiveRecord::Migration[5.2]
       t.string :zip
       t.string :description
       t.string :phone_number
+      t.integer :average_rating
       t.boolean :public, :default => false
 
       t.timestamps

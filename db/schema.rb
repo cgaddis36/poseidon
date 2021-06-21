@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_06_12_170411) do
     t.string "zip"
     t.string "description"
     t.string "phone_number"
+    t.integer "average_rating"
     t.boolean "public", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
