@@ -6,7 +6,7 @@ module Mutations
       argument :city, String, required: true
       argument :state, String, required: true
       argument :zip, String, required: true
-      argument :phone_number, String, required: true
+      argument :phone_number, String, required: false
       argument :url, String, required: false
       argument :hours, String, required: false
       argument :description, String, required: false
